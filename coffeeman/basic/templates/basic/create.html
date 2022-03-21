@@ -1,0 +1,17 @@
+{% extends 'basic/base.html' %}
+
+{% block title %}
+Оставить отзыв
+{% endblock %}
+
+{% block content %}
+    <h2>Оставить отзыв</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.name }}<br>
+        {{ form.email }}<br>
+        {{ form.comments }}<br>
+        <button type="submit" class="btn btn-success">Отправить отзыв</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

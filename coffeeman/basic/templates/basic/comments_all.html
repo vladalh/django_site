@@ -1,0 +1,21 @@
+{% extends 'basic/base.html' %}
+
+{% block title %}
+Отзывы
+{% endblock %}
+
+{% block content %}
+    <h2>Отзывы</h2>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'create' %}">Оставить отзыв</a>
+        </nav>
+    </div>
+    {% for el in reviews %}
+        <div class="alert alert-warning mt-2">
+            <h3>{{ el.name }}</h3>
+            <p>{{ el.email }}</p>
+            <p>{{ el.comments }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
