@@ -5,13 +5,17 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Оставить отзыв</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.name }}<br>
-        {{ form.email }}<br>
-        {{ form.comments }}<br>
-        <button type="submit" class="btn btn-success">Отправить отзыв</button>
-        <span>{{ error }}</span>
-    </form>
+    <div class="container">
+            <h2 style="text-shadow: 1px 1px 2px white, 0 0 1em blue, 0 0 0.2em blue; color: black; font: 1.5em Georgia, serif;">Оставить отзыв</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.name }}<br>
+                {{ form.email }}<br>
+                {{ form.comments }}<br>
+                <button type="submit" class="btn btn-success">Отправить отзыв</button>
+                <span>{{ error }}</span>
+            </form>
+        </div>
+
 {% endblock %}
+
